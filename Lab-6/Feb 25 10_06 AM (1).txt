@@ -1,0 +1,167 @@
+1====================================
+#graph representatin using matrix
+#raed file
+
+f=open("graph.txt")
+vertex_and_edges=f.readline()
+vertex = int(vertex_and_edges.split()[0])
+edges= int(vertex_and_edges.split()[1])
+
+#create empty matrix
+graph=[]
+for i in range(vertex):
+    row=[0]*vertex
+    graph.append(row)
+    
+#populate graph data in matrix
+for line in f.readlines():
+    u= int(line.split()[0])
+    v= int(line.split()[1])
+    graph[u][v]=1
+    graph[v][u]=1
+
+for row in graph:
+    print(row)
+
+=================
+graph.txt>>>>
+=================
+9 10
+0 1
+0 3
+0 8
+1 7
+2 3
+3 7
+2 5
+3 4
+4 8
+5 6
+==================================
+2=====
+#graph representatin using matrix
+#raed file
+
+f=open("graph.txt")
+vertex_and_edges=f.readline()
+vertex = int(vertex_and_edges.split()[0])
+edges= int(vertex_and_edges.split()[1])
+print(vertex)
+#create empty List
+List={}
+for i in range(vertex):
+    List[i]=[]
+print(List)
+
+#populate graph data in list
+for line in f.readlines():
+    v = int(line.split()[0])
+    u = int(line.split()[1])
+    List[u].append(v) 
+    List[v].append(u)
+print(List)
+==========================================
+3=======Directed Graph¶=================
+#graph representatin using matrix
+#raed file
+
+f = open("directed_graph.txt")
+vertex_and_edges=f.readline()
+vertex = int(vertex_and_edges.split()[0])
+edges= int(vertex_and_edges.split()[1])
+print(vertex)
+
+#create empty matrix
+graph=[]
+for i in range(vertex):
+    row=[0]*vertex
+    graph.append(row)
+
+#populate graph data in matrix
+for line in f.readlines():
+    u= int(line.split()[0])
+    v= int(line.split()[1])
+    graph[u][v]=1
+    #graph[v][u]=1
+
+for row in graph:
+    print(row)
+    
+    ================================
+directed_graph.txt
+==================
+6 9
+0 1
+0 5
+1 2
+1 5
+2 3
+3 0
+3 1
+4 3
+5 4
+=====================
+#graph representatin using matrix
+#raed file
+
+f=open("directed_graph.txt")
+vertex_and_edges=f.readline()
+vertex = int(vertex_and_edges.split()[0])
+edges= int(vertex_and_edges.split()[1])
+print(vertex)
+#create empty List
+List={}
+for i in range(vertex):
+    List[i]=[]
+print(List)
+
+#populate graph data in list
+for line in f.readlines():
+    v = int(line.split()[0])
+    u = int(line.split()[1])
+    List[u].append(v) 
+    #List[v].append(u)
+print(List)
+===================================
+4==================
+def adjacent(u,Li):
+    return Li[u]
+    
+def outdegree(Li,u):
+    return len(Li[u])
+
+def indegree(Li,u):
+    c = 0
+    for i in range (len(Li)):
+        for j in range(len(Li[i])):
+            if Li[i][j]==u:
+                c= c+1
+    return c
+
+f=open("directed_graph.txt")
+vertex_and_edges=f.readline()
+vertex = int(vertex_and_edges.split()[0])
+edges= int(vertex_and_edges.split()[1])
+
+#create empty List
+List={}
+for i in range(vertex):
+    List[i]=[]
+print(List)
+
+#populate graph data in list
+for line in f.readlines():
+    v = int(line.split()[0])
+    u = int(line.split()[1])
+    List[u].append(v) 
+    #List[v].append(u)
+print(List)
+
+adj = adjacent(0,List)
+print(adj)
+indeg = indegree(List,4)
+print(indeg)
+outdeg = outdegree(List,4)
+print(outdeg)
+            
+    ==================================
